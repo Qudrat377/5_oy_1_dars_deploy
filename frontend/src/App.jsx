@@ -30,7 +30,7 @@ function App() {
   // get
 
   const getData = () => {
-    fetch("http://localhost:4024/get_all_todo", {
+    fetch("https://todolist-backend-97e2.onrender.com/get_all_todo", {
       method: "GET",
       headers: {
         // chekts: chekt,
@@ -48,7 +48,7 @@ function App() {
   const addData = (event) => {
     event.preventDefault();
     if (editId) {
-      fetch("http://localhost:4024/update_todo/" + editId, {
+      fetch("https://todolist-backend-97e2.onrender.com/update_todo/" + editId, {
         method: "PUT",
         headers: {
           authorization: "Bearer " + localStorage.getItem("token"),
@@ -66,7 +66,7 @@ function App() {
         })
         .catch((error) => console.log(error.message));
     } else {
-      fetch("http://localhost:4024/add_todo", {
+      fetch("https://todolist-backend-97e2.onrender.com/add_todo", {
         method: "POST",
         headers: {
           authorization: "Bearer " + localStorage.getItem("token"),
@@ -96,7 +96,7 @@ function App() {
   // delete
 
   const deleteTodo = (id) => {
-    fetch("http://localhost:4024/delete_todo/" + id, {
+    fetch("https://todolist-backend-97e2.onrender.com/delete_todo/" + id, {
       method: "DELETE",
       headers: {
         authorization: "Bearer " + localStorage.getItem("token"),
@@ -115,7 +115,7 @@ function App() {
 
   const register = (event) => {
     event.preventDefault();
-    fetch("http://localhost:4024/register", {
+    fetch("https://todolist-backend-97e2.onrender.com/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -150,7 +150,7 @@ function App() {
 const login = (event) => {
   event.preventDefault();
 
-  fetch("http://localhost:4024/login", {
+  fetch("https://todolist-backend-97e2.onrender.com/login", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -187,7 +187,7 @@ const login = (event) => {
   const UsernameLogo = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:4024/get_username", {
+      fetch("https://todolist-backend-97e2.onrender.com/get_username", {
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -204,7 +204,7 @@ const login = (event) => {
   // cheket delete
 
   const toggleChecked = (todo) => {
-    fetch("http://localhost:4024/update_checked/" + todo.id, {
+    fetch("https://todolist-backend-97e2.onrender.com/update_checked/" + todo.id, {
       method: "PUT",
       headers: {
         authorization: "Bearer " + localStorage.getItem("token"),
@@ -225,7 +225,7 @@ const login = (event) => {
   // remuchekeded
 
   const removeChecked = () => {
-    fetch("http://localhost:4024/delete_checked", {
+    fetch("https://todolist-backend-97e2.onrender.com/delete_checked", {
       method: "DELETE",
       headers: {
         authorization: "Bearer " + localStorage.getItem("token"),
